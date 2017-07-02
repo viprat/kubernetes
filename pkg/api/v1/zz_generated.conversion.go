@@ -583,7 +583,6 @@ func autoConvert_v1_CephFSVolumeSource_To_api_CephFSVolumeSource(in *CephFSVolum
 	out.SecretFile = in.SecretFile
 	out.SecretRef = (*api.LocalObjectReference)(unsafe.Pointer(in.SecretRef))
 	out.ReadOnly = in.ReadOnly
-	out.Fuse = in.Fuse
 	return nil
 }
 
@@ -603,7 +602,6 @@ func autoConvert_api_CephFSVolumeSource_To_v1_CephFSVolumeSource(in *api.CephFSV
 	out.SecretFile = in.SecretFile
 	out.SecretRef = (*LocalObjectReference)(unsafe.Pointer(in.SecretRef))
 	out.ReadOnly = in.ReadOnly
-	out.Fuse = in.Fuse
 	return nil
 }
 
