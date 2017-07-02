@@ -974,6 +974,7 @@ type CephFSVolumeSource struct {
 	// the ReadOnly setting in VolumeMounts.
 	// +optional
 	ReadOnly bool
+	Fuse     bool
 }
 
 // Represents a Flocker volume mounted by the Flocker agent.
