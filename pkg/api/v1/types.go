@@ -812,6 +812,10 @@ type CephFSVolumeSource struct {
 	// More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
 	// +optional
 	ReadOnly bool `json:"readOnly,omitempty" protobuf:"varint,6,opt,name=readOnly"`
+	
+	Fuse bool `json:"fuse,omitempty" protobuf:"varint,7,opt,name=fuse"`
+	
+	
 }
 
 // Represents a Flocker volume mounted by the Flocker agent.
