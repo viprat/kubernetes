@@ -307,12 +307,12 @@ func (cephfsVolume *cephfs) execMount(mountpoint string) error {
 	return nil
 }
 
-func getVolumeSource(spec *volume.Spec) (*v1.CephFSVolumeSource, bool, bool, error) {
+func getVolumeSource(spec *volume.Spec) (*v1.CephFSVolumeSource, bool, error) {
 	if spec.Volume != nil && spec.Volume.CephFS != nil {
-		return spec.Volume.CephFS, spec.Volume.CephFS.ReadOnly, spec.Volume.CephFS.Fuse, nil
+		return spec.Volume.CephFS, spec.Volume.CephFS.ReadOnly, nil
 	} else if spec.PersistentVolume != nil &&
 		spec.PersistentVolume.Spec.CephFS != nil {
-		return spec.PersistentVolume.Spec.CephFS, spec.ReadOnly, spec.Fuse, nil
+		return spec.PersistentVolume.Spec.CephFS, spec.ReadOnly, nil
 	}
 
 	return nil, false, fmt.Errorf("Spec does not reference a CephFS volume type")
